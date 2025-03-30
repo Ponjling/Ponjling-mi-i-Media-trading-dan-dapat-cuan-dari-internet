@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Signals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Trading Signals</h1>
+    <form action="/add_signal" method="post">
+        <input type="text" name="signal" placeholder="Enter trading signal">
+        <button type="submit">Add Signal</button>
+    </form>
+    <ul>
+        {% for signal in signals %}
+        <li>{{ signal }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
